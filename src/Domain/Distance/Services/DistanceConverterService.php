@@ -17,6 +17,7 @@ class DistanceConverterService
      * @param string $convertedUnit
      * @param float $value
      * @return float
+     * @throws \Exception
      */
     public function convert(string $originalUnit, string $convertedUnit, float $value): float{
         if($originalUnit === $convertedUnit){
@@ -30,8 +31,7 @@ class DistanceConverterService
                 return round($value * 0.9144,4);
             default:
                 //this should never happen, but just in case
-                throwException(new \Exception('Expected meters or yards'));
-                return 0;
+                throw new \Exception('Expected meters or yards');
         }
     }
 }
