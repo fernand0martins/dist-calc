@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace App\Tests\Acceptance;
 
-
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
  * Class DistanceCalculatorControllerTest
  *
  * @author Fernando Martins
+ * @package App\Tests\Acceptance
  */
 class DistanceCalculatorControllerTest extends WebTestCase
 {

@@ -1,9 +1,9 @@
 distance_calculator_usage:
     path: /distance-calculator
     methods: ['GET']
-    controller: App\Controller\DistanceCalculatorController::usage
+    controller: App\Http\Controller\DistanceCalculatorController::usage
 
 distance_calculator_sum:
     path: /distance-calculator
     methods: ['POST']
-    controller: App\Controller\DistanceCalculatorController::calculate
+    controller: App\Http\Controller\DistanceCalculatorController::calculate

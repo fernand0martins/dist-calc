@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\ValueObject;
+namespace App\Domain\Distance\Model;
 
 /**
  * Class Distance
@@ -11,22 +11,22 @@ namespace App\ValueObject;
  */
 class Distance
 {
-    /** @var int */
+    /** @var float */
     private $value;
 
     /** @var string */
     private $unit;
 
-    public function __construct(int $value, string $unit)
+    public function __construct(float $value, string $unit)
     {
         $this->value = $value;
         $this->unit = $unit;
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getValue(): int
+    public function getValue(): float
     {
         return $this->value;
     }

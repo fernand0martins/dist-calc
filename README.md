@@ -14,3 +14,8 @@ To run locally use `php -S 127.0.0.1:8000 -t public`
 ## Test suit
 - static code analysis run `php vendor/bin/psalm`
 - run acceptance and unit tests with`php bin/phpunit`
+
+## Todo
+- currently psalm complains on the usage of the library on the validator service
+- better message validation output
+- extend test validation for all possible payload keys
