@@ -19,8 +19,8 @@ Api documentation exists in ``http://127.0.0.1:8000/api/doc``
 - run acceptance and unit tests with`php bin/phpunit`
 
 ## Todo
-- currently psalm complains on the usage of the library on the validator service
-- better message validation output
+- currently psalm complains of the validator library
+- better message validation output/messages
 - extend test validation for all possible payload keys
-- changes examples, validation and documentation for multiple distance input
-- throw a name Exception in the DistanceConverterService
+- change examples, validation and documentation for multiple distance input
+- throw a named Exception in the DistanceConverterService
