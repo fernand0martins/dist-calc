@@ -12,8 +12,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
+use Swagger\Annotations as SWG;
+use Symfony\Component\Routing\Annotation\Route;
+
+
 /**
  * Class DistanceCalculatorController
+ *
  *
  * @author Fernando Martins
  * @package App\Controller
@@ -58,12 +63,50 @@ class DistanceCalculatorController
     /**
      * @return Response
      */
+
+    /**
+     * Shows a example of the object that can be used in the POST operation
+     *
+     * @SWG\Response(
+     *     response=200,
+     *     description="Returns a example of the post object",
+     *
+     * )
+     * @SWG\Tag(name="Example")
+     */
     public function usage(): Response
     {
         return new JsonResponse(self::USAGE_EXAMPLE);
     }
 
     /**
+     * Calculates the sum of two distances
+     *
+     * @SWG\Response(
+     *     response=200,
+     *     description="Receives two distances and sums them",
+     *
+     * )
+     * @SWG\Parameter(
+     *   name="body",
+     *   in="body",
+     *   @SWG\Schema(
+     *     type="object",
+     *     @SWG\Property(property="values", type="object",
+     *        @SWG\Property(property="distance1",type="object",
+     *          @SWG\Property(property="value",type="float"),
+     *          @SWG\Property(property="unit",type="string")
+     *        ),
+     *     @SWG\Property(property="distance2",type="object",
+     *          @SWG\Property(property="value",type="float"),
+     *          @SWG\Property(property="unit",type="string")
+     *        )
+     *     ),
+     *     @SWG\Property(property="response_unit", type="string")
+     *   )
+     * )
+     * @SWG\Tag(name="Sum distances")
+     *
      * @param Request $request
      * @return Response
      */

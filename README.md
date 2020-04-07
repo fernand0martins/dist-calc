@@ -11,6 +11,9 @@ Run `composer install`
 ## Server
 To run locally use `php -S 127.0.0.1:8000 -t public`
 
+## Api documentation
+Api documentation exists in ``http://127.0.0.1:8000/api/doc``
+
 ## Test suit
 - static code analysis run `php vendor/bin/psalm`
 - run acceptance and unit tests with`php bin/phpunit`
