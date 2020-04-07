@@ -22,3 +22,5 @@ Api documentation exists in ``http://127.0.0.1:8000/api/doc``
 - currently psalm complains on the usage of the library on the validator service
 - better message validation output
 - extend test validation for all possible payload keys
+- changes examples, validation and documentation for multiple distance input
+- throw a name Exception in the DistanceConverterService

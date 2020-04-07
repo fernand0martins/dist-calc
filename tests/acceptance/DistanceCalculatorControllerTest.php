@@ -20,7 +20,7 @@ class DistanceCalculatorControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('GET', '/distance-calculator');
+        $client->request('GET', '/api/distance-calculator');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
@@ -32,7 +32,7 @@ class DistanceCalculatorControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('POST', '/distance-calculator');
+        $client->request('POST', '/api/distance-calculator');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }

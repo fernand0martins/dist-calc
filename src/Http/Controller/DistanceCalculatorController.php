@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controller;
 
+use App\Domain\Distance\Model\Distance;
 use App\Domain\Distance\Services\DistanceConverterService;
 use App\Http\Services\PayloadValidatorService;
 use Respect\Validation\Exceptions\ComponentException;
@@ -124,9 +125,22 @@ class DistanceCalculatorController
             return $this->Response([$validationException->getMessage()]);
         }
 
+        $responseUnit = $payload['response_unit'];
+        $sum = 0;
+        foreach ($payload['values'] as $payloadDistance) {
+            $distance = new Distance($payloadDistance['value'], $payloadDistance['unit']);
 
-        //todo calculate the distance
-        return $this->Response(['todo']);
+            $value = $this->distanceConverterService->convert(
+                $distance->getUnit(),
+                $responseUnit,
+                $distance->getValue());
+            $sum += $value;
+        }
+
+        return $this->Response([
+            'unit' => $responseUnit,
+            'value' => $sum
+        ]);
     }
 
     /**
