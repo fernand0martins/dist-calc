@@ -108,6 +108,7 @@ class DistanceCalculatorController
      * )
      * @SWG\Tag(name="Sum distances")
      *
+     * @throws \Exception
      * @param Request $request
      * @return Response
      */
